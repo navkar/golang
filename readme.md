@@ -10,3 +10,4 @@ go build hello-world.go
 * [multiple-return-values] (https://gobyexample.com/multiple-return-values)
 * [golang] (https://golang.org/)
 * [overview-of-Go] (https://www.codeproject.com/Articles/1160635/Quick-Overview-of-Go)
+* [golang-book] (https://www.golang-book.com/books/intro/10)
