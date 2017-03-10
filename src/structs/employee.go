@@ -7,6 +7,11 @@ type Employee struct {
   FirstName string
   LastName string
   Role string
+  Manager *Employee
+}
+
+func (e *Employee) SetManager(mgr *Employee) {
+  e.Manager = mgr
 }
 
 //the type *Employee is the receiver of the ManagerRole method.
@@ -23,7 +28,13 @@ func NewEmployee(firstName string, lastName string) *Employee {
   return &Employee {
     FirstName: firstName,
     LastName: lastName,
-    Role: "" }
+    Role: "",
+    Manager: nil }
+
+    // emp := new (Employee)
+    // emp.FirstName = firstName
+    // emp.LastName = lastName
+    // return emp
 }
 
 //goku := new(Saiyan) // same as
@@ -37,8 +48,10 @@ func main() {
   emp.FirstName = "Satya"
   emp.LastName = "Nadella"
   emp.EmployeeRole()
+  emp.SetManager(mgr)
 
-  fmt.Println("FirstName | LastName | Role")
+  fmt.Println("FirstName | LastName | Role | Manager")
   fmt.Println(mgr)
   fmt.Println(emp)
+  fmt.Println(emp.Manager.FirstName + " is the manager of " + emp.FirstName)
 }
