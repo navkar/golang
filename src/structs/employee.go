@@ -37,8 +37,8 @@ func NewEmployee(firstName string, lastName string) *Employee {
     // return emp
 }
 
-//goku := new(Saiyan) // same as
-//goku := &Saiyan{}
+//emp := new (Employee) // same as
+//emp := &Employee{}
 
 func main() {
   mgr := NewEmployee ("Bill", "Gates")
