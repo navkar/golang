@@ -73,3 +73,14 @@ func main() {
   fmt.Println(emp.Manager.FirstName + " is the manager of " + emp.FirstName)
 }
 ```
+
+#### Output 
+
+```bash
+Naveens-MacBook-Pro:structs navkar$ go run employee.go
+FirstName | LastName | Role | Manager
+&{Bill Gates manager <nil>}
+&{Satya Nadella employee 0xc420014200}
+Bill is the manager of Satya
+Naveens-MacBook-Pro:structs navkar$
+```
