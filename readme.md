@@ -79,7 +79,40 @@ go build hello-world.go
   }
 ```
 
+* universe block contains all source code
+* package block contains all package’s source code (package can be spread over several files in a single directory)
+* file block contains file’s source code (importing packages names have scope set to file block)
+* for statement is in its own implicit block
 
+```go
+  for i := 0; i < 5; i++ {
+      fmt.Println(i)
+  }
+```
+
+```go
+  if i := 0; i >= 0 {
+      fmt.Println(i)
+  }
+```
+
+```go
+  switch i := 2; i * 4 {
+  case 8:
+      fmt.Println(i)
+  default:
+      fmt.Println(“default”)
+  }
+```
+
+```go
+  v := 1
+  {
+      v := 2  // short variable declaration
+      fmt.Println(v)
+  }
+  fmt.Println(v)
+```
 
 ### What is the difference between the following code snippets?
 
