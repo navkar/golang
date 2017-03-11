@@ -60,6 +60,27 @@ go build hello-world.go
   import _ "ThisIsGoingToBuild"
 ```
 
+### what are blocks in golang?
+
+* Block is a sequence of statements (empty sequence is also valid). Blocks can be nested and are denoted by curly brackets
+
+```go
+  package main
+  import “fmt”
+  func main() {
+      { // start outer block
+          a := 1
+          fmt.Println(a)
+          { // start inner block
+              b := 2
+              fmt.Println(b)
+          } // end inner block
+      } // end outer block
+  }
+```
+
+
+
 ### What is the difference between the following code snippets?
 
 #### snippet #1
