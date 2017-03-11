@@ -65,48 +65,32 @@ go build hello-world.go
 #### snippet #1
 
 ```go
-    package main
-    import "fmt"
-    var (
-        a int = b + 1
-        b int = 1
-    )
-    func main() {
-        fmt.Println(a)
-        fmt.Println(b)
-    }
+  package main
+  import "fmt"
+  var (
+      a int = b + 1
+      b int = 1
+  )
+  func main() {
+      fmt.Println(a)
+      fmt.Println(b)
+  }
 ```
 
 #### snippet #2
 
 ```go
-    package main
-    import "fmt"
-    func main() {
-        var (
-            a int = b + 1
-            b int = 1
-        )
-        fmt.Println(a)
-        fmt.Println(b)
-    }
+  package main
+  import "fmt"
+  func main() {
+      var (
+          a int = b + 1
+          b int = 1
+      )
+      fmt.Println(a)
+      fmt.Println(b)
+  }
 ```
-
-
-### golang commands on bash
-
-```bash
-go run hello-world.go
-go build hello-world.go
-./hello-world
-```
-
-### GO Lang references
-* [multiple-return-values] (https://gobyexample.com/multiple-return-values)
-* [golang] (https://golang.org/)
-* [overview-of-Go] (https://www.codeproject.com/Articles/1160635/Quick-Overview-of-Go)
-* [golang-book] (https://www.golang-book.com/books/intro/10)
-* [go-lang-cheat-sheet] (https://github.com/a8m/go-lang-cheat-sheet/)
 
 ### Struct in go - Employee-Manager example
 ```go
@@ -179,3 +163,10 @@ FirstName | LastName | Role | Manager
 Bill is the manager of Satya
 Naveens-MacBook-Pro:structs navkar$
 ```
+
+### golang references
+* [multiple-return-values] (https://gobyexample.com/multiple-return-values)
+* [golang] (https://golang.org/)
+* [overview-of-Go] (https://www.codeproject.com/Articles/1160635/Quick-Overview-of-Go)
+* [golang-book] (https://www.golang-book.com/books/intro/10)
+* [go-lang-cheat-sheet] (https://github.com/a8m/go-lang-cheat-sheet/)
