@@ -32,6 +32,7 @@ func main() {
   c.Price = 239.49
   c.Vehicle = v
 
+  // Important : use this c.Vehicle.EngineType OR c.EngineType
   fmt.Println("The vehicle has " + c.Vehicle.EngineType + " engine")
   fmt.Println("The price of the car is " + fmt.Sprintf("%.2f", c.Price))
 
