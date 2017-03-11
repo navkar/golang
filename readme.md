@@ -6,6 +6,27 @@ I have written some code snippets while learning golang. Look around and learn!
 
 Every Go program starts in a package main by calling identically named function. When this function returns the program ends its execution.
 
+```go
+  package main
+  import "fmt"
+
+  func main() {
+      fmt.Printf("Hello from the GO programming language\n")
+      fmt.Printf("This is lot like C programming language\n")
+  }
+```
+
+### golang commands on bash
+
+```bash
+go run hello-world.go
+```
+
+```bash
+go build hello-world.go
+./hello-world
+```
+
 ### init function in golang and more on packages
 
 * init functions are defined in package block.
@@ -38,6 +59,39 @@ Every Go program starts in a package main by calling identically named function.
 ```go
   import _ "ThisIsGoingToBuild"
 ```
+
+### What is the difference between the following code snippets?
+
+#### snippet #1
+
+```go
+    package main
+    import "fmt"
+    var (
+        a int = b + 1
+        b int = 1
+    )
+    func main() {
+        fmt.Println(a)
+        fmt.Println(b)
+    }
+```
+
+#### snippet #2
+
+```go
+    package main
+    import "fmt"
+    func main() {
+        var (
+            a int = b + 1
+            b int = 1
+        )
+        fmt.Println(a)
+        fmt.Println(b)
+    }
+```
+
 
 ### golang commands on bash
 
