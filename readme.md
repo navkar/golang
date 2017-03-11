@@ -1,3 +1,7 @@
+## Welcome
+
+I have written some code snippets while learning golang. Look around and learn!
+
 ## GO commands on bash
 
 ```bash
@@ -11,7 +15,7 @@ go build hello-world.go
 * [golang] (https://golang.org/)
 * [overview-of-Go] (https://www.codeproject.com/Articles/1160635/Quick-Overview-of-Go)
 * [golang-book] (https://www.golang-book.com/books/intro/10)
-
+* [go-lang-cheat-sheet] (https://github.com/a8m/go-lang-cheat-sheet/)
 
 ### Struct in go - Employee-Manager example
 ```go
@@ -74,7 +78,7 @@ func main() {
 }
 ```
 
-#### Output 
+#### Output
 
 ```bash
 Naveens-MacBook-Pro:structs navkar$ go run employee.go
