@@ -2,7 +2,44 @@
 
 I have written some code snippets while learning golang. Look around and learn!
 
-## GO commands on bash
+### main function in golang
+
+Every Go program starts in a package main by calling identically named function. When this function returns the program ends its execution.
+
+### init function in golang and more on packages
+
+* init functions are defined in package block.
+* init function doesn’t take arguments neither returns any value.
+* identifier init is not declared so cannot be referenced.
+* Many init functions can be defined in the same package.
+* init identifier doesn’t introduce binding, just as blank identifier represented by underscore character.
+* Package initialization is done only once even if package is imported many times.
+* To use a imported package it needs to be initialized first.
+* Package in Go can contain many files. To ensure reproducible initialization behavior, build systems are encouraged to present multiple files belonging to the same package in lexical file name order to a compiler.
+* init is called after all the global variables in the package (all files) are initialized.
+* The most common use case of init function is to assign a value which cannot be calculated as a part of initialization expression
+* for instance, it’s not possible to use for loop as an expression (it’s a statement in Go) so putting it into init function solves the problem.
+
+```go
+  var precomputed = [20]float64{}
+  func init() {
+      var current float64 = 1
+      precomputed[0] = current
+      for i := 1; i < len(precomputed); i++ {
+          precomputed[i] = precomputed[i-1] * 1.2
+      }
+  }
+```
+
+### solving unused imports with a blank identifier
+
+* Go is very strict when it comes to unused variables/imports.
+
+```go
+  import _ "ThisIsGoingToBuild"
+```
+
+### golang commands on bash
 
 ```bash
 go run hello-world.go
