@@ -146,6 +146,79 @@ go build hello-world.go
   }
 ```
 
+### Golang method receivers
+
+* you define a method receiver to specify which struct to attach a certain function to in order to make it invoke-able as a method.
+
+For instance, `func (d Dog)` is part which defines the method receiver in the following program:
+
+```go
+  package main
+
+  import "fmt"
+
+  type Dog struct {
+  }
+
+  func (d Dog) Say() {
+      fmt.Println("Woof!")
+  }
+
+  func main() {
+      d := &Dog{}
+      d.Say()
+  }
+```
+
+#### what’s the difference between pointer and non-pointer method receivers?
+
+You can treat the receiver as if it was an argument being passed to the method. All the same reasons why you might want to pass by value or pass by reference apply.
+
+```go
+  func (s *MyStruct) pointerMethod() { } // method on pointer
+  func (s MyStruct)  valueMethod()   { } // method on value
+```
+
+First, and most important, does the method need to modify the receiver? If it does, the receiver must be a pointer. (Slices and maps act as references, so their story is a little more subtle, but for instance to change the length of a slice in a method the receiver must still be a pointer.) In the examples above, if pointerMethod modifies the fields of s, the caller will see those changes, but valueMethod is called with a copy of the caller's argument (that's the definition of passing a value), so changes it makes will be invisible to the caller.
+
+Reasons why you would want to pass by reference as opposed to by value:
+
+* You want to actually modify the receiver (“read/write” as opposed to just “read”)
+* The struct is very large and a deep copy is expensive
+* Consistency: if some of the methods on the struct have pointer receivers, the rest should too. This allows predictability of behavior
+
+```go
+  package main
+
+  import "fmt"
+
+  type Mutatable struct {
+      a int
+      b int
+  }
+
+  func (m Mutatable) StayTheSame() {
+      m.a = 5
+      m.b = 7
+  }
+
+  func (m *Mutatable) Mutate() {
+      m.a = 5
+      m.b = 7
+  }
+
+  func main() {
+    // With method receivers that take pointers
+    // Go conveniently allows both pointers and non-pointers to be passed and it automatically does the conversion     
+      m := &Mutatable{0, 0}
+      fmt.Println(m)
+      m.StayTheSame()
+      fmt.Println(m)
+      m.Mutate()
+      fmt.Println(m)
+  }
+```
+
 ### Struct in golang - Employee-Manager example
 ```go
 package main
@@ -351,6 +424,7 @@ type Interface interface {
   t := reflect.TypeOf(i)    // get meta-data in type i, and use t to get all elements
   v := reflect.ValueOf(i)   // get actual value in type i, and use v to change its value
 ```
+
 2. Convert the reflected types to get the values that we need
 
 ```go
@@ -369,7 +443,6 @@ type Interface interface {
   v := p.Elem()
   v.SetFloat(7.1)
 ```
-
 
 ### golang references
 * [multiple-return-values] (https://gobyexample.com/multiple-return-values)
