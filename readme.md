@@ -192,17 +192,17 @@ Reasons why you would want to pass by reference as opposed to by value:
 
   import "fmt"
 
-  type Mutatable struct {
+  type Mutable struct {
       a int
       b int
   }
 
-  func (m Mutatable) StayTheSame() {
+  func (m Mutable) StayTheSame() {
       m.a = 5
       m.b = 7
   }
 
-  func (m *Mutatable) Mutate() {
+  func (m *Mutable) Mutate() {
       m.a = 5
       m.b = 7
   }
@@ -210,7 +210,8 @@ Reasons why you would want to pass by reference as opposed to by value:
   func main() {
     // With method receivers that take pointers
     // Go conveniently allows both pointers and non-pointers to be passed and it automatically does the conversion     
-      m := &Mutatable{0, 0}
+      m := &Mutable{0, 0}
+    //  m := new (Mutable) - this will work as well
       fmt.Println(m)
       m.StayTheSame()
       fmt.Println(m)
