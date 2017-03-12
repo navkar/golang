@@ -315,6 +315,61 @@ If the element is the type that we expect, ok will be true, false otherwise.
 
 ### Embedded Interfaces in golang
 
+* If an interface has another interface embedded within it, it will behave as if it has all the methods that the embedded interface has.
+
+We can see that the source file in `container/heap` has the following definition:
+
+```go
+  type Interface interface {
+    sort.Interface // embedded sort.Interface
+    Push(x interface{}) //a Push method to push elements into the heap
+    Pop() interface{} //a Pop method that pops elements from the heap
+  }
+```
+
+We see that sort.Interface is an embedded interface, so the above Interface has the three methods contained within the `sort.Interface` implicitly.
+
+```go
+type Interface interface {
+  // Len is the number of elements in the collection.
+  Len() int
+  // Less returns whether the element with index i should sort
+  // before the element with index j.
+  Less(i, j int) bool
+  // Swap swaps the elements with indexes i and j.
+  Swap(i, j int)
+}
+```
+
+### Reflection in go
+
+* Reflection in Go is used for determining information at runtime. We use the `reflect` package.
+
+1. There are three steps involved when using reflect. First, we need to convert an interface to reflect types (`reflect.Type` or `reflect.Value`, this depends on the situation).
+
+```go
+  t := reflect.TypeOf(i)    // get meta-data in type i, and use t to get all elements
+  v := reflect.ValueOf(i)   // get actual value in type i, and use v to change its value
+```
+2. Convert the reflected types to get the values that we need
+
+```go
+  var x float64 = 3.4
+  v := reflect.ValueOf(x)
+  fmt.Println("type:", v.Type())
+  fmt.Println("kind is float64:", v.Kind() == reflect.Float64)
+  fmt.Println("value:", v.Float())
+```
+
+3. Change the values of the reflected types, we need to make it modifiable
+
+```go
+  var x float64 = 3.4
+  p := reflect.ValueOf(&x)
+  v := p.Elem()
+  v.SetFloat(7.1)
+```
+
 
 ### golang references
 * [multiple-return-values] (https://gobyexample.com/multiple-return-values)
