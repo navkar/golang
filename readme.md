@@ -27,6 +27,10 @@ go build hello-world.go
 ./hello-world
 ```
 
+### How to write Go code
+
+[What is the project structure for Go code] (https://golang.org/doc/code.html)
+
 ### init function in golang and more on packages
 
 * init functions are defined in package block.
