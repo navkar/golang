@@ -27,9 +27,11 @@ go build hello-world.go
 ./hello-world
 ```
 
-### How to write Go code
+### project structure for golang code
 
-[What is the project structure for Go code] (https://golang.org/doc/code.html)
+refer to the link below to read on how to write your first library in golang
+
+[project structure] (https://golang.org/doc/code.html)
 
 ### init function in golang and more on packages
 
