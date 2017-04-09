@@ -31,7 +31,7 @@ go build hello-world.go
 
 refer to the link below to read on how to write your first library in golang
 
-[project structure] (golang.org/doc/code.html)
+[project structure] (https://golang.org/doc/code.html)
 
 ### init function in golang and more on packages
 
@@ -496,8 +496,8 @@ The convention in Go is to use `MixedCaps` or `mixedCaps` rather than underscore
 
 ### golang references
 
-* [multiple-return-values] (gobyexample.com/multiple-return-values)
-* [golang] (golang.org/)
-* [overview-of-Go] (www.codeproject.com/Articles/1160635/Quick-Overview-of-Go)
-* [golang-book] (www.golang-book.com/books/intro/10)
-* [go-lang-cheat-sheet] (github.com/a8m/go-lang-cheat-sheet/)
+* [multiple-return-values] (https://gobyexample.com/multiple-return-values)
+* [golang] (https://golang.org/)
+* [overview-of-Go] (https://www.codeproject.com/Articles/1160635/Quick-Overview-of-Go)
+* [golang-book] (https://www.golang-book.com/books/intro/10)
+* [go-lang-cheat-sheet] (https://github.com/a8m/go-lang-cheat-sheet/)
