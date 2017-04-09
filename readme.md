@@ -1,8 +1,8 @@
-## Welcome
+# Welcome
 
 I have written some code snippets while learning golang. Look around and learn!
 
-### main function in golang
+## main function in golang
 
 Every Go program starts in a package main by calling identically named function. When this function returns the program ends its execution.
 
@@ -31,7 +31,7 @@ go build hello-world.go
 
 refer to the link below to read on how to write your first library in golang
 
-[project structure] (https://golang.org/doc/code.html)
+[project structure] (golang.org/doc/code.html)
 
 ### init function in golang and more on packages
 
@@ -66,7 +66,7 @@ refer to the link below to read on how to write your first library in golang
   import _ "ThisIsGoingToBuild"
 ```
 
-### what are blocks in golang?
+### what are blocks in golang
 
 * Block is a sequence of statements (empty sequence is also valid). Blocks can be nested and are denoted by curly brackets
 
@@ -120,7 +120,7 @@ refer to the link below to read on how to write your first library in golang
   fmt.Println(v)
 ```
 
-### What is the difference between the following code snippets?
+### Find the difference between the following code snippets
 
 #### snippet #1
 
@@ -176,7 +176,7 @@ For instance, `func (d Dog)` is part which defines the method receiver in the fo
   }
 ```
 
-#### what’s the difference between pointer and non-pointer method receivers?
+#### what’s the difference between pointer and non-pointer method receivers
 
 You can treat the receiver as if it was an argument being passed to the method. All the same reasons why you might want to pass by value or pass by reference apply.
 
@@ -215,7 +215,7 @@ Reasons why you would want to pass by reference as opposed to by value:
 
   func main() {
     // With method receivers that take pointers
-    // Go conveniently allows both pointers and non-pointers to be passed and it automatically does the conversion     
+    // Go conveniently allows both pointers and non-pointers to be passed and it automatically does the conversion
       m := &Mutable{0, 0}
     //  m := new (Mutable) - this will work as well
       fmt.Println(m)
@@ -227,6 +227,7 @@ Reasons why you would want to pass by reference as opposed to by value:
 ```
 
 ### Struct in golang - Employee-Manager example
+
 ```go
 package main
 import (
@@ -297,6 +298,7 @@ FirstName | LastName | Role | Manager
 Bill is the manager of Satya
 Naveens-MacBook-Pro:structs navkar$
 ```
+
 ### golang interfaces
 
 * an interface is a set of methods that we use to define a set of actions
@@ -432,7 +434,7 @@ type Interface interface {
   v := reflect.ValueOf(i)   // get actual value in type i, and use v to change its value
 ```
 
-2. Convert the reflected types to get the values that we need
+1. Convert the reflected types to get the values that we need
 
 ```go
   var x float64 = 3.4
@@ -442,7 +444,7 @@ type Interface interface {
   fmt.Println("value:", v.Float())
 ```
 
-3. Change the values of the reflected types, we need to make it modifiable
+1. Change the values of the reflected types, we need to make it modifiable
 
 ```go
   var x float64 = 3.4
@@ -493,8 +495,9 @@ if owner != user {
 The convention in Go is to use `MixedCaps` or `mixedCaps` rather than underscores to write multiword names.
 
 ### golang references
-* [multiple-return-values] (https://gobyexample.com/multiple-return-values)
-* [golang] (https://golang.org/)
-* [overview-of-Go] (https://www.codeproject.com/Articles/1160635/Quick-Overview-of-Go)
-* [golang-book] (https://www.golang-book.com/books/intro/10)
-* [go-lang-cheat-sheet] (https://github.com/a8m/go-lang-cheat-sheet/)
+
+* [multiple-return-values] (gobyexample.com/multiple-return-values)
+* [golang] (golang.org/)
+* [overview-of-Go] (www.codeproject.com/Articles/1160635/Quick-Overview-of-Go)
+* [golang-book] (www.golang-book.com/books/intro/10)
+* [go-lang-cheat-sheet] (github.com/a8m/go-lang-cheat-sheet/)
