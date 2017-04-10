@@ -501,3 +501,12 @@ The convention in Go is to use `MixedCaps` or `mixedCaps` rather than underscore
 * [overview-of-Go] (https://www.codeproject.com/Articles/1160635/Quick-Overview-of-Go)
 * [golang-book] (https://www.golang-book.com/books/intro/10)
 * [go-lang-cheat-sheet] (https://github.com/a8m/go-lang-cheat-sheet/)
+
+### golang useful packages
+
+* [Package goth provides a simple, clean, and idiomatic way to write authentication packages for Go web applications] (https://github.com/markbates/goth)
+* [Go Secure Example Application] (https://github.com/komand/gosea)
+
+### Rapid Web development in golang using Buffalo
+
+* [gobuffalo.io] (http://gobuffalo.io/docs/getting-started)
