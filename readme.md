@@ -33,6 +33,17 @@ refer to the link below to read on how to write your first library in golang
 
 [project structure] (https://golang.org/doc/code.html)
 
+### GOPATH setup
+
+```bash
+# Edit ~/.bash_profile
+
+export GOPATH=/Users/navkar/go
+export PATH=$GOPATH/bin:$PATH
+
+# Reload profile : source ~/.bash_profile
+```
+
 ### init function in golang and more on packages
 
 * init functions are defined in package block.
@@ -510,3 +521,48 @@ The convention in Go is to use `MixedCaps` or `mixedCaps` rather than underscore
 ### Rapid Web development in golang using Buffalo
 
 * [gobuffalo.io] (http://gobuffalo.io/docs/getting-started)
+
+* Creating a new application using Buffalo
+
+```bash
+
+navkar$ go get -u github.com/gobuffalo/buffalo/...
+
+navkar$ pwd
+/Users/navkar/go/src/github.com/navkar
+
+navkar$ buffalo new trips
+...
+You can find your new application at:
+/Users/navkar/go/src/github.com/navkar/trips
+
+navkar$
+```
+
+* Creating databases
+
+Once the `database.yml` has been configured with the appropriate settings, and the database server is running, Buffalo can create all of the databases in the `database.yml` file with a simple command:
+
+```bash
+navkar$ pwd
+/Users/navkar/go/src/github.com/navkar/trips
+
+trips navkar$ buffalo db create -e development
+v3.17.0
+
+CREATE DATABASE trips_development;
+created database trips_development
+```
+
+* Running the GO Web App
+
+```bash
+navkar$ buffalo dev
+```
+
+[[https://github.com/navkar/golang/blob/master/img/golang_buffalo.png|alt=golang_buffalo]]
+
+
+
+
+
