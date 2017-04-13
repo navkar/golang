@@ -522,7 +522,7 @@ The convention in Go is to use `MixedCaps` or `mixedCaps` rather than underscore
 
 * [gobuffalo.io] (http://gobuffalo.io/docs/getting-started)
 
-* Creating a new application using Buffalo
+#### Creating a new application using Buffalo
 
 ```bash
 
@@ -539,7 +539,7 @@ You can find your new application at:
 navkar$
 ```
 
-* Creating databases
+#### Creating databases
 
 Once the `database.yml` has been configured with the appropriate settings, and the database server is running, Buffalo can create all of the databases in the `database.yml` file with a simple command:
 
@@ -554,7 +554,7 @@ CREATE DATABASE trips_development;
 created database trips_development
 ```
 
-* Running the GO Web App
+#### Running the GO Web App
 
 ```bash
 navkar$ buffalo dev
