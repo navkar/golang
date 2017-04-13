@@ -560,7 +560,7 @@ created database trips_development
 navkar$ buffalo dev
 ```
 
-[[https://github.com/navkar/golang/blob/master/img/golang_buffalo.png]]
+[https://github.com/navkar/golang/blob/master/img/golang_buffalo.png]
 
 
 
