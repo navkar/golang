@@ -560,7 +560,7 @@ created database trips_development
 navkar$ buffalo dev
 ```
 
-[[/img/golang_buffalo.png]]
+![Buffalo](/img/golang_buffalo.png?raw=true "Buffalo Dev")
 
 
 
