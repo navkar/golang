@@ -560,9 +560,52 @@ created database trips_development
 navkar$ buffalo dev
 ```
 
+#### Running the GO Web App
+
 ![Buffalo](/img/golang_buffalo.png?raw=true "Buffalo Dev")
 
+#### Create Models
 
+Buffalo uses Fizz to generate migrations that are both easy to work with and work across multiple types of databases.
+
+```bash
+navkar$ buffalo db generate model trip
+v3.17.0
+
+--> models/trip.go
+--> models/trip_test.go
+--> goimports -w .
+> migrations/20170413183709_create_trips.up.fizz
+> migrations/20170413183709_create_trips.down.fizz
+```
+
+Create a `trip` model.
+
+```golang
+create_table("trips", func(t) {
+    t.Column("id", "uuid", {"primary": true})
+    t.Column("name", "string", {"size": 50})
+    t.Column("location", "string", {"size": 50})
+    t.Column("duration", "integer", {"default": 0})
+    t.Column("is_active", "boolean", {"default": true})
+    t.Column("is_deleted", "boolean", {"default": false})
+    t.Column("started_at", "timestamp", {})
+    t.Column("ended_at", "timestamp", {})
+})
+```
+
+#### Running Migrations
+
+Once migrations have been created they can be run with either of the following commands:
+
+```bash
+navkar$ buffalo db migrate
+v3.17.0
+
+> 20170413183709_create_trips.up.fizz
+
+0.0605 seconds
+```
 
 
 
