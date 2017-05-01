@@ -23,7 +23,7 @@ func (b Bike) dispose() string {
 }
 
 func (c Car) dispose() string {
-	return c.name + " has been disposed on " + strconv.Itoa(c.year)
+	return c.name + " was bought in " + strconv.Itoa(c.year)
 }
 
 func PrintAnyInterface(any interface{}) {
@@ -48,6 +48,11 @@ func main() {
 	var i = &Car{"Toyota", 2010}
 	PrintAnyInterface(i)
 
-	var b = &Bike{"Suzuki"}
+	var x = new(Car)
+	x.name = "Honda"
+	x.year = 2017
+	PrintAnyInterface(x)
+
+	var b = &Bike{name: "Suzuki"}
 	PrintAnyInterface(b)
 }

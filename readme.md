@@ -434,6 +434,30 @@ type Interface interface {
 }
 ```
 
+### The interface{} type
+
+The interface{} type is the interface that has no methods. Since there is no implements keyword, all types implement at least zero methods, and satisfying an interface is done automatically, all types satisfy the empty interface. That means that if you write a function that takes an interface{} value as a parameter, you can supply that function with any value.
+
+```go
+func PrintAnyInterface(any interface{}) {
+
+// REF : https://research.swtch.com/interfaces
+// if v, ok := any.(Stringer); ok {
+//     return v.String()
+// }
+
+    switch v := any.(type) {
+    case IDisposable:
+        fmt.Println(v.dispose())
+        return
+    default:
+        fmt.Println(v)
+    }
+}
+```
+
+An interface value is constructed of two words of data; one word is used to point to a method table for the value’s underlying type, and the other word is used to point to the actual data being held by that value. Understand that an interface value is two words wide and it contains a pointer to the underlying data.
+
 ### Reflection in go
 
 * Reflection in Go is used for determining information at runtime. We use the `reflect` package.
