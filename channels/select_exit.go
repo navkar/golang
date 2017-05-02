@@ -14,7 +14,7 @@ func main() {
 		select {
 		case s := <-output:
 			fmt.Println(s)
-			if s == 100 {
+			if s == 100000 {
 				quit <- -1
 				fmt.Println("sending quit...")
 			}
@@ -31,7 +31,7 @@ func sleepCounterWithExit(name string, quit chan int) <-chan int {
 	c := make(chan int)
 
 	go func() {
-		for i := 1; i < 10000; i++ {
+		for i := 1; i < 1000010; i++ {
 
 			select {
 			case c <- i:

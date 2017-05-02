@@ -7,7 +7,7 @@ import (
 
 func main() {
 	c := counter("SFO")
-	timeout := time.After(3 * time.Second)
+	timeout := time.After(2 * time.Second)
 
 	for {
 		select {
