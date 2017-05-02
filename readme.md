@@ -460,9 +460,19 @@ An interface value is constructed of two words of data; one word is used to poin
 
 When you are given an interface value, there’s no guarantee whether the underlying type is or isn’t a pointer.
 
-### channels in go 
+### channels in go
 
-fan-in example in go
+Channels are typed values that allow goroutines to synchronize and exchange information.
+
+```go
+    c := make(chan int)
+    go func() { c <- 3} ()
+    n := <-c
+```
+
+#### fan-in example in go
+
+A `select` blocks until one of its `case` can execute.
 
 ```go
 func main() {
@@ -596,6 +606,7 @@ func (t T) String() string
 * [overview-of-Go] (https://www.codeproject.com/Articles/1160635/Quick-Overview-of-Go)
 * [golang-book] (https://www.golang-book.com/books/intro/10)
 * [go-lang-cheat-sheet] (https://github.com/a8m/go-lang-cheat-sheet/)
+* [godoc.org] (https://godoc.org/)
 
 ### golang useful packages
 
